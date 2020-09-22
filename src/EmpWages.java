@@ -28,7 +28,6 @@ public class EmpWages {
 				}
 			}
 			TotalWorkDays++;
-		
 		}
 		
 		System.out.println("Total Work days : " + TotalWorkDays + " Total Work Hour " + TotalWorkHour + "Total Monthly Wage : " + TotalWorkHour*TotalWorkDays*wagePerHour);
