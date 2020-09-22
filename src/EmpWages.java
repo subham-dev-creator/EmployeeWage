@@ -10,16 +10,14 @@ public class EmpWages {
 		// TODO Auto-generated method stub
 		int randomMark =(int)(Math.random()*10%3);
 		
-		if(randomMark==1) {
-			//Full Time
+		switch(randomMark) {
+		case 1:
 			System.out.println("Total wage Full Time : "+ TotalWorkingHourFullTime*wagePerHour);
-		}
-		else if(randomMark==2){
-			//Part Time
-			System.out.println("Total wage Part Time : "+TotalWorkingHourFullTime*wagePerHour);
-		}
-		else {
-			//Not Present
+			break;
+		case 2:
+			System.out.println("Total wage Full Time : "+ TotalWorkingHourFullTime*wagePerHour);
+			break;
+		default:
 			System.out.println("N/A Not an Employee");
 		}
 	}
