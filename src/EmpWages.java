@@ -2,22 +2,25 @@
 public class EmpWages {
 	
 	final static int wagePerHour = 20;
-	final static int TotalWorkingHour=8;
+	final static int TotalWorkingHourFullTime=8;
+	final static int TotalWorkHourPartTime=8;
 	
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int randomMark =(int)(Math.random()*10%2);
-		if(randomMark==1)
-			System.out.println("Employee is Present");
-		else
-			System.out.println("Employee is Absent");
+		int randomMark =(int)(Math.random()*10%3);
 		
 		if(randomMark==1) {
-			System.out.println("Total wage of Employee "+ TotalWorkingHour*wagePerHour);
+			//Full Time
+			System.out.println("Total wage Full Time : "+ TotalWorkingHourFullTime*wagePerHour);
+		}
+		else if(randomMark==2){
+			//Part Time
+			System.out.println("Total wage Part Time : "+TotalWorkingHourFullTime*wagePerHour);
 		}
 		else {
-			System.out.println("N/A as Employee is Absent");
+			//Not Present
+			System.out.println("N/A Not an Employee");
 		}
 	}
 
