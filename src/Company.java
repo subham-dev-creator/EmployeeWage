@@ -54,6 +54,14 @@ public class Company extends EmpWages {
 		return WageHourDaysArray;
 	}
 	
+	int getTotalWage() {
+		int TotalSalary=0;
+		for(int i=0;i<emp.size();i++) {
+			TotalSalary+=emp.elementAt(i).MonthlyWage;
+		}
+		return TotalSalary;
+	}
+	
 	public static void main(String[] args) {
 		int NumOfCompany ;
 		Scanner sc= new Scanner(System.in);
@@ -77,11 +85,13 @@ public class Company extends EmpWages {
 				e.TotalWorkHour=WageHourDaysArray[2];
 				c[i].emp.add(e);
 				
-				System.out.println("Company : " + i + " Employee " + j + " Has MonthlyWage " +c[i].emp.elementAt(j).MonthlyWage);
+//				System.out.println("Company : " + i + " Employee " + j + " Has MonthlyWage " +c[i].emp.elementAt(j).MonthlyWage);
 			
 			}
-		
+			
 		}
+		for(int i=0;i<NumOfCompany;i++)
+		System.out.println("Company Total Wage " + c[i].getTotalWage());
 		sc.close();
 	}
 }
