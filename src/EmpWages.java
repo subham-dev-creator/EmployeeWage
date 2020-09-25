@@ -1,12 +1,17 @@
+import java.util.Vector;
+
 public class EmpWages {
 	int TotalWorkHour;
 	int TotalWorkDays;
 	int MonthlyWage;
-	
+	final int MaxWorkDays=30;
+	Vector<Integer> DailyWages=new Vector<Integer>();
 	EmpWages(){
 		MonthlyWage=0;
 		TotalWorkHour=0;
 		TotalWorkDays=0;
+		for(int i=0;i<MaxWorkDays;i++)
+			DailyWages.add(0,i);
 	}
 
 	public static void main(String[] args) {
