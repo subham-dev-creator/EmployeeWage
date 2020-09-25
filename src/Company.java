@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.Vector;
 
-public class Company extends EmpWages {
+public class Company extends EmpWages implements EmpWageBuilder {
 	
 	//Variables
 	int CompanyId;
@@ -23,8 +23,8 @@ public class Company extends EmpWages {
 		maxWorkHour=100;
 	}
 	
-	static //Functions
-	int[] calculateWage(int TotalWorkHour,int TotalWorkDays) {
+	 //Functions
+	public int[] calculateWage(int TotalWorkHour,int TotalWorkDays) {
 		int[] WageHourDaysArray=new int[3];
 		int CurWage=0;
 		while(TotalWorkHour<=maxWorkHour && TotalWorkDays<=maxWorkDayPerMonth) {
@@ -79,7 +79,7 @@ public class Company extends EmpWages {
 				EmpWages e=new EmpWages();
 				int[] WageHourDaysArray=new int[3];
 				
-				WageHourDaysArray=calculateWage(e.TotalWorkDays,e.TotalWorkHour);
+				WageHourDaysArray=c[i].calculateWage(e.TotalWorkDays,e.TotalWorkHour);
 				e.MonthlyWage=WageHourDaysArray[0];
 				e.TotalWorkDays=WageHourDaysArray[1];
 				e.TotalWorkHour=WageHourDaysArray[2];
