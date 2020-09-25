@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import java.util.Vector;
+import java.util.ArrayList;
 
 public class Company extends EmpWages implements EmpWageBuilder {
 	
@@ -11,7 +11,7 @@ public class Company extends EmpWages implements EmpWageBuilder {
 	static int maxWorkDayPerMonth;
 	static int maxWorkHour;
 	int Id=1;
-	Vector<EmpWages> emp = new Vector<EmpWages>() ;
+	ArrayList<EmpWages> emp = new ArrayList<EmpWages>();
 	
 	//Constructor
 	Company(){
@@ -56,8 +56,8 @@ public class Company extends EmpWages implements EmpWageBuilder {
 	
 	int getTotalWage() {
 		int TotalSalary=0;
-		for(int i=0;i<emp.size();i++) {
-			TotalSalary+=emp.elementAt(i).MonthlyWage;
+		for(EmpWages e:emp) {
+			TotalSalary+=e.MonthlyWage;
 		}
 		return TotalSalary;
 	}
@@ -85,7 +85,7 @@ public class Company extends EmpWages implements EmpWageBuilder {
 				e.TotalWorkHour=WageHourDaysArray[2];
 				c[i].emp.add(e);
 				
-//				System.out.println("Company : " + i + " Employee " + j + " Has MonthlyWage " +c[i].emp.elementAt(j).MonthlyWage);
+				System.out.println("Company : " + i + " Employee " + j + " Has MonthlyWage " +e.MonthlyWage);
 			
 			}
 			
